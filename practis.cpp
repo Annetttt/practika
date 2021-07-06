@@ -1,13 +1,59 @@
-﻿
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+
 using namespace std;
 
-int MaxFunc(int, int);
+class bigNum {
+public:
+	vector<int> numbers;
+	bigNum operator * (int number) {
+		for (int index = 0; index < this->numbers.size(); index++) {
+			this->numbers[index] = this->numbers[index] * number;
+		}
+
+		for (int index = 0; index < this->numbers.size(); index++) {
+			if (this->numbers[index] > 9) {
+				if (index == this->numbers.size() - 1) {
+					this->numbers.push_back(0);
+				}
+
+				this->numbers[index + 1] += this->numbers[index] / 10;
+				this->numbers[index] = this->numbers[index] % 10;
+			}
+		}
+		return *this;
+	}
+
+	bigNum(int number) {
+		this->numbers.push_back(number);
+	}
+
+	string toString() {
+		string temp;
+
+		for (int index = this->numbers.size() - 1; index >= 0 ; index--) {
+			temp += 48 + this->numbers[index];
+		}
+
+		return temp;
+	}
+};
+
+bigNum numberToPower(int, int);
+
+bigNum numberToPower(int number, int power) {
+	bigNum result(number);
+	for (int index = 0; index < power - 1; index++) {
+		result = result * number;
+	}
+	return result;
+}
+
 
 int main()
 {
-    int a = 1, b = 1, c;
+int a = 1, b = 1, c;
     cout << "Test 1:\n" << a << " " << b << endl;
     c = MaxFunc(a, b);
     cout << c << endl;
@@ -59,4 +105,5 @@ int main()
 
     return 0;
 }
+
 
