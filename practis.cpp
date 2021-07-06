@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -25,6 +26,10 @@ public:
 		return *this;
 	}
 
+	bigNum() {
+
+	}
+
 	bigNum(int number) {
 		this->numbers.push_back(number);
 	}
@@ -32,7 +37,7 @@ public:
 	string toString() {
 		string temp;
 
-		for (int index = this->numbers.size() - 1; index >= 0 ; index--) {
+		for (int index = this->numbers.size() - 1; index >= 0; index--) {
 			temp += 48 + this->numbers[index];
 		}
 
@@ -53,57 +58,46 @@ bigNum numberToPower(int number, int power) {
 
 int main()
 {
-int a = 1, b = 1, c;
-    cout << "Test 1:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	bigNum result;
+	result = numberToPower(1, 1);
+	cout << "Test 1:" << setw(10) << 1 << setw(10) << 1 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 9, b = 7000;
-    cout << "Test 2:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(7, 900);
+	cout << "Test 2:" << setw(10) << 7 << setw(10) << 9000 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 1, b = 7000;
-    cout << "Test 3:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(1, 7000);
+	cout << "Test 3:" << setw(10) << 1 << setw(10) << 7000 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 9, b = 1;
-    cout << "Test 4:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(9, 1);
+	cout << "Test 4:" << setw(10) << 9 << setw(10) << 1 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 2, b = 1034;
-    cout << "Test 5:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(2, 1034);
+	cout << "Test 5:" << setw(10) << 2 << setw(10) << 1034 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 4, b = 5555;
-    cout << "Test 6:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(4, 5555);
+	cout << "Test 6:" << setw(10) << 4 << setw(10) << 5555 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 5, b = 202;
-    cout << "Test 7:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(5, 202);
+	cout << "Test 7:" << setw(10) << 5 << setw(10) << 202 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 6, b = 6999;
-    cout << "Test 8:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(6, 6999);
+	cout << "Test 8:" << setw(10) << 6 << setw(10) << 6999 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 7, b = 5;
-    cout << "Test 9:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(7, 5);
+	cout << "Test 9:" << setw(10) << 7 << setw(10) << 5 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    a = 8, b = 86;
-    cout << "Test 10:\n" << a << " " << b << endl;
-    c = MaxFunc(a, b);
-    cout << c << endl;
+	result = numberToPower(8, 86);
+	cout << "Test 10:" << setw(10) << 8 << setw(10) << 86 << "\nResult:" << result.toString() << endl;
+	cout << "------------------------------------------------------------------------------------------" << endl;
 
-    return 0;
+	return 0;
 }
-
-
